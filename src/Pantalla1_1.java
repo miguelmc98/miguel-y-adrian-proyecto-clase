@@ -12,7 +12,7 @@ import java.awt.Color;
 
 public class Pantalla1_1 {
 
-	JFrame frame;
+	static JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -85,6 +85,7 @@ public class Pantalla1_1 {
 			public void actionPerformed(ActionEvent arg0) {
 				Pantalla1 atraspantalla1  = new  Pantalla1();
 				atraspantalla1.frame.setVisible(true);
+				Pantalla1_1.frame.setVisible(false);
 			}
 			
 				

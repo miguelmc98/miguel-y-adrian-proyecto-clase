@@ -16,7 +16,7 @@ import java.awt.event.ActionEvent;
 
 public class Pantalla1_1_2 {
 
-	JFrame frame;
+	static JFrame frame;
 	private JTextField textField;
 	private JTable table;
 	private JTextField textField_1;
@@ -178,6 +178,7 @@ public class Pantalla1_1_2 {
 			public void actionPerformed(ActionEvent arg0) {
 				Pantalla1_1 atraspantalla1_1  = new  Pantalla1_1();
 				atraspantalla1_1.frame.setVisible(true);
+				Pantalla1_1_2.frame.setVisible(false);
 			}
 		});
 		btnAtras.setFont(new Font("Lucida Bright", Font.ITALIC, 11));

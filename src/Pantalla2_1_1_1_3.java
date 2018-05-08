@@ -5,10 +5,13 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.Color;
 
 public class Pantalla2_1_1_1_3 {
 
-	JFrame frame;
+	static JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -38,20 +41,24 @@ public class Pantalla2_1_1_1_3 {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(Color.CYAN);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblHelados = new JLabel("Helados");
-		lblHelados.setBounds(177, 11, 46, 14);
+		lblHelados.setFont(new Font("Lucida Bright", Font.ITALIC, 24));
+		lblHelados.setBounds(147, 11, 133, 23);
 		frame.getContentPane().add(lblHelados);
 		
 		JButton btnChocolate = new JButton("Chocolate");
-		btnChocolate.setBounds(41, 85, 104, 74);
+		btnChocolate.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\chocolate.JPG"));
+		btnChocolate.setBounds(36, 54, 120, 101);
 		frame.getContentPane().add(btnChocolate);
 		
 		JButton btnVainilla = new JButton("Vainilla");
-		btnVainilla.setBounds(263, 85, 104, 68);
+		btnVainilla.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\vainilla.jpg"));
+		btnVainilla.setBounds(247, 62, 133, 93);
 		frame.getContentPane().add(btnVainilla);
 		
 		JButton btnAtras = new JButton("ATRAS");
@@ -62,6 +69,7 @@ public class Pantalla2_1_1_1_3 {
 			public void actionPerformed(ActionEvent arg0) {
 				Pantalla2_1_1_1 atraspantalla2_1_1_3  = new  Pantalla2_1_1_1();
 				atraspantalla2_1_1_3.frame.setVisible(true);
+				Pantalla2_1_1_1_3.frame.setVisible(false);
 			}
 		});
 	}

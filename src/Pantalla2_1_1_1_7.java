@@ -5,10 +5,13 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.Color;
 
 public class Pantalla2_1_1_1_7 {
 
-	JFrame frame;
+	static JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -38,20 +41,24 @@ public class Pantalla2_1_1_1_7 {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(135, 206, 250));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblCafes = new JLabel("Cafes");
-		lblCafes.setBounds(175, 11, 46, 14);
+		lblCafes.setFont(new Font("Lucida Bright", Font.ITALIC, 23));
+		lblCafes.setBounds(139, 11, 118, 34);
 		frame.getContentPane().add(lblCafes);
 		
 		JButton btnNewButton = new JButton("Cafe con leche");
-		btnNewButton.setBounds(44, 93, 111, 45);
+		btnNewButton.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\cafeleche.png"));
+		btnNewButton.setBounds(39, 56, 118, 119);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnCafeSinLeche = new JButton("Cafe solo");
-		btnCafeSinLeche.setBounds(234, 93, 118, 45);
+		btnCafeSinLeche.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\cagesolo.jpg"));
+		btnCafeSinLeche.setBounds(234, 56, 118, 119);
 		frame.getContentPane().add(btnCafeSinLeche);
 		
 		JButton btnAtras = new JButton("ATRAS");
@@ -62,6 +69,7 @@ public class Pantalla2_1_1_1_7 {
 			public void actionPerformed(ActionEvent arg0) {
 				Pantalla2_1_1_1 atraspantalla2_1_1_1_7  = new  Pantalla2_1_1_1();
 				atraspantalla2_1_1_1_7.frame.setVisible(true);
+				Pantalla2_1_1_1_7.frame.setVisible(false);
 			}
 		});
 		

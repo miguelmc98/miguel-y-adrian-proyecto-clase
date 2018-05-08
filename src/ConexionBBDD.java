@@ -41,7 +41,7 @@ public class ConexionBBDD {
 		String [] columnas={"ID_CATEGORIA","NOMBRE"};
 		String [] registro=new String[2];
 		DefaultTableModel ModeloTabla = new DefaultTableModel(null,columnas);
-		String query = "SELECT * FROM MIGUEL.CATEGORIA";
+		String query = "SELECT * FROM MIGUEL.CATEGORIA ";
 		 
 		try {
 			Statement stmt = conexion.createStatement();
@@ -61,6 +61,26 @@ public class ConexionBBDD {
 		return ModeloTabla;
 		
 	}
+	public int InsertarCategoria() {
+	
+		
+		int resultado = 0;
+		String UPDATE = "INSERT INTO  MIGUEL.CATEGORIA VALUES("+Pantalla1_1_1.Id+" , '"+Pantalla1_1_1.Nombre+"')";
+		 
+		System.out.println(UPDATE);
+		try {
+			Statement stmt = conexion.createStatement();
+			resultado = stmt.executeUpdate(UPDATE);
+			stmt.close();
+			
+		}catch (SQLException s){
+			s.printStackTrace();
+		}
+		
+		return resultado;
+		
+	}
+	
 	
 	
 

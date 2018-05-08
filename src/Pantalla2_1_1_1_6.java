@@ -5,6 +5,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.Color;
 
 public class Pantalla2_1_1_1_6 {
 
@@ -38,24 +41,28 @@ public class Pantalla2_1_1_1_6 {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(Color.CYAN);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblCopas = new JLabel("Copas");
-		lblCopas.setBounds(188, 11, 46, 14);
+		lblCopas.setFont(new Font("Lucida Bright", Font.ITALIC, 23));
+		lblCopas.setBounds(156, 11, 89, 38);
 		frame.getContentPane().add(lblCopas);
 		
 		JButton btnRon = new JButton("Ron barcelo");
-		btnRon.setBounds(31, 70, 112, 80);
+		btnRon.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\barcelo.jpg"));
+		btnRon.setBounds(31, 60, 112, 129);
 		frame.getContentPane().add(btnRon);
 		
 		JButton btnBombay = new JButton("Bombay");
-		btnBombay.setBounds(238, 70, 122, 80);
+		btnBombay.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\bombay.jpg"));
+		btnBombay.setBounds(238, 60, 112, 121);
 		frame.getContentPane().add(btnBombay);
 		
 		JButton btnAtras = new JButton("ATRAS");
-		btnAtras.setBounds(247, 192, 89, 23);
+		btnAtras.setBounds(249, 211, 89, 23);
 		frame.getContentPane().add(btnAtras);
 		
 		btnAtras.addActionListener(new ActionListener() {

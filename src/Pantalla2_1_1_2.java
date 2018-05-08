@@ -117,12 +117,14 @@ public class Pantalla2_1_1_2 {
 		textField_1.setColumns(10);
 		
 		JButton btnPagar = new JButton("PAGAR");
-		btnPagar.setBackground(Color.BLACK);
+		btnPagar.setForeground(Color.BLACK);
+		btnPagar.setBackground(Color.GRAY);
 		btnPagar.setBounds(27, 201, 137, 48);
 		frame.getContentPane().add(btnPagar);
 		
 		JButton btnCancelar = new JButton("CANCELAR");
-		btnCancelar.setBackground(Color.BLACK);
+		btnCancelar.setForeground(Color.BLACK);
+		btnCancelar.setBackground(Color.GRAY);
 		btnCancelar.setBounds(27, 260, 137, 47);
 		frame.getContentPane().add(btnCancelar);
 		

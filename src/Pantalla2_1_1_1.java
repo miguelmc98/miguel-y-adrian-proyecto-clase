@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
 
 public class Pantalla2_1_1_1 {
 
-	JFrame frame;
+	static JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -177,6 +177,7 @@ public class Pantalla2_1_1_1 {
 			public void actionPerformed(ActionEvent e) {
 				Pantalla2_1_1_1_3 helados  = new  Pantalla2_1_1_1_3();
 				helados.frame.setVisible(true);
+				Pantalla2_1_1_1.frame.setVisible(false);
 			
 			}
 			});

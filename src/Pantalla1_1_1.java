@@ -23,10 +23,14 @@ import java.awt.event.ActionListener;
 
 public class Pantalla1_1_1 {
 
-	JFrame frame;
+	static JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTable table;
+	private ConexionBBDD conexion;
+	static String Nombre;
+	static String Id;
+	
 
 	/**
 	 * Launch the application.
@@ -48,6 +52,7 @@ public class Pantalla1_1_1 {
 	 * Create the application.
 	 */
 	public Pantalla1_1_1() {
+		conexion = new ConexionBBDD();
 		initialize();
 	}
 
@@ -82,12 +87,16 @@ public class Pantalla1_1_1 {
 		btnAadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				String Nombre = textField.getText();
-				String Id = textField_1.getText();
+				
+				Nombre = textField.getText();
+				 Id = textField_1.getText();
 				if(Nombre!="" && Id!="") {
 					DefaultTableModel data =(DefaultTableModel)table.getModel();
 					String [] fila = {Id,Nombre};
 					data.addRow(fila);
+					conexion.InsertarCategoria();
+					
+					
 					
 				}
 				
@@ -166,6 +175,7 @@ public class Pantalla1_1_1 {
 			public void actionPerformed(ActionEvent e) {
 				Pantalla1_1 atraspantalla1_1  = new  Pantalla1_1();
 				atraspantalla1_1.frame.setVisible(true);
+				Pantalla1_1_1.frame.setVisible(false);
 			}
 		});
 		btnNewButton.setBounds(49, 263, 157, 32);

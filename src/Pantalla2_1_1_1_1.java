@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 
 public class Pantalla2_1_1_1_1 {
 
-	JFrame frame;
+	static JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -85,6 +85,7 @@ public class Pantalla2_1_1_1_1 {
 			public void actionPerformed(ActionEvent arg0) {
 				Pantalla2_1_1_1 atraspantalla2_1_1_1  = new  Pantalla2_1_1_1();
 				atraspantalla2_1_1_1.frame.setVisible(true);
+				Pantalla2_1_1_1_1.frame.setVisible(false);
 			}
 		});
 		btnNewButton.setBounds(423, 290, 169, 33);

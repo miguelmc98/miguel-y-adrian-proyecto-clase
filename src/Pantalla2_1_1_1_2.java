@@ -5,10 +5,13 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.Color;
 
 public class Pantalla2_1_1_1_2 {
 
-	JFrame frame;
+	static JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -38,30 +41,36 @@ public class Pantalla2_1_1_1_2 {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(Color.CYAN);
+		frame.getContentPane().setForeground(Color.CYAN);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblPizzas = new JLabel("Pizzas");
-		lblPizzas.setBounds(192, 11, 46, 14);
+		lblPizzas.setFont(new Font("Lucida Bright", Font.ITALIC, 25));
+		lblPizzas.setBounds(170, 11, 166, 29);
 		frame.getContentPane().add(lblPizzas);
 		
 		JButton btnJamonYQueso = new JButton("Jamon y queso");
-		btnJamonYQueso.setBounds(36, 94, 127, 70);
+		btnJamonYQueso.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\jamonyqueso.png"));
+		btnJamonYQueso.setBounds(34, 74, 140, 110);
 		frame.getContentPane().add(btnJamonYQueso);
 		
 		JButton btnBarbacoa = new JButton("Barbacoa");
-		btnBarbacoa.setBounds(258, 94, 127, 70);
+		btnBarbacoa.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\barbacoa.jpg"));
+		btnBarbacoa.setBounds(240, 74, 145, 110);
 		frame.getContentPane().add(btnBarbacoa);
 		
 		JButton btnAtras = new JButton("ATRAS");
-		btnAtras.setBounds(258, 201, 127, 29);
+		btnAtras.setBounds(250, 201, 127, 29);
 		frame.getContentPane().add(btnAtras);
 		
 		btnAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Pantalla2_1_1_1 atraspantalla2_1_1_2  = new  Pantalla2_1_1_1();
 				atraspantalla2_1_1_2.frame.setVisible(true);
+				Pantalla2_1_1_1_2.frame.setVisible(false);
 			}
 		});
 		
