@@ -20,6 +20,8 @@ import java.awt.ScrollPane;
 import java.awt.event.ActionEvent;
 import java.awt.Point;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Pantalla1_1_1 {
 
@@ -124,6 +126,13 @@ public class Pantalla1_1_1 {
 		frame.getContentPane().add(lblNombre);
 		
 		JButton btnEliminar = new JButton("Eliminar");
+		btnEliminar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				textField_1.setText("");
+				textField.setText("");
+				
+			}
+		});
 		btnEliminar.setForeground(Color.BLACK);
 		btnEliminar.setBackground(new Color(128, 128, 128));
 		btnEliminar.setFont(new Font("Lucida Bright", Font.ITALIC, 16));
@@ -142,6 +151,13 @@ public class Pantalla1_1_1 {
 		frame.getContentPane().add(lblId_1);
 		
 		JButton btnEditar = new JButton("Editar");
+		btnEditar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Nombre = textField.getText();
+			 	Id = textField_1.getText();
+				 conexion.ModificarCategoria();
+			}
+		});
 		btnEditar.setForeground(Color.BLACK);
 		btnEditar.setBackground(new Color(128, 128, 128));
 		btnEditar.setFont(new Font("Lucida Bright", Font.ITALIC, 16));
@@ -153,6 +169,19 @@ public class Pantalla1_1_1 {
 		frame.getContentPane().add(scrollPane);
 		
 		table = new JTable();
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				int seleccion =table.rowAtPoint(arg0.getPoint());
+				textField_1.setText((String)table.getValueAt(seleccion, 0));
+				textField.setText((String)table.getValueAt(seleccion, 1));
+				
+				Nombre = textField.getText();
+				 Id = textField_1.getText();
+				
+	            
+			}
+		});
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 				{"3", "Bebidas"},
@@ -180,6 +209,17 @@ public class Pantalla1_1_1 {
 		});
 		btnNewButton.setBounds(49, 263, 157, 32);
 		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnListar = new JButton("LISTAR");
+		btnListar.addActionListener(new ActionListener() {
+			
+			
+			public void actionPerformed(ActionEvent e) {
+				table.setModel(conexion.ConsultaTablaCategoria());
+			}
+		});
+		btnListar.setBounds(249, 272, 89, 23);
+		frame.getContentPane().add(btnListar);
 		
 		
 		}

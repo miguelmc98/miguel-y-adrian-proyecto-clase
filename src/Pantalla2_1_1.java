@@ -77,6 +77,9 @@ public class Pantalla2_1_1 {
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				Pantalla2_1_1_1 aceptar  = new  Pantalla2_1_1_1();
+				aceptar.frame.setVisible(true);
+				
 			}
 		});
 		btnAceptar.setForeground(Color.BLACK);

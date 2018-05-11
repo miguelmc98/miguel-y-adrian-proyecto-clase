@@ -41,7 +41,7 @@ public class ConexionBBDD {
 		String [] columnas={"ID_CATEGORIA","NOMBRE"};
 		String [] registro=new String[2];
 		DefaultTableModel ModeloTabla = new DefaultTableModel(null,columnas);
-		String query = "SELECT * FROM MIGUEL.CATEGORIA ";
+		String query = "SELECT * FROM MIGUEL.CATEGORIA ORDER BY ID_CATEGORIA ASC ";
 		 
 		try {
 			Statement stmt = conexion.createStatement();
@@ -60,6 +60,34 @@ public class ConexionBBDD {
 		
 		return ModeloTabla;
 		
+		
+	}
+	public DefaultTableModel ConsultaTablaProductos() {
+		String [] columnas={"ID","Id_Categoria","NOMBRE" ,"Precio"};
+		String [] registro=new String[5];
+		DefaultTableModel ModeloTabla = new DefaultTableModel(null,columnas);
+		String query = "SELECT * FROM MIGUEL.PRODUCTO  ";
+		 
+		try {
+			Statement stmt = conexion.createStatement();
+			ResultSet rset = stmt.executeQuery(query);
+			while(rset.next()) {
+				 registro[0]=rset.getString("ID_Producto");
+		         registro[1]=rset.getString("Id_Categoria");
+		         registro[2]=rset.getString("NOMBRE");
+		         registro[3]=rset.getString("Precio");
+		         
+		         
+		         ModeloTabla.addRow(registro);
+			}
+			rset.close();
+			stmt.close();
+			
+		}catch (SQLException s){
+			s.printStackTrace();
+		}
+		
+		return ModeloTabla;
 	}
 	public int InsertarCategoria() {
 	
@@ -80,7 +108,47 @@ public class ConexionBBDD {
 		return resultado;
 		
 	}
+public int ModificarCategoria() {
 	
+		
+		int resultado = 0;
+		String UPDATE = "UPDATE  MIGUEL.CATEGORIA SET  Id_Categoria="+Pantalla1_1_1.Id+" , NOMBRE='"+Pantalla1_1_1.Nombre+"' WHERE Id_Categoria="+Pantalla1_1_1.Id+"";
+		 
+		System.out.println(UPDATE);
+		try {
+			Statement stmt = conexion.createStatement();
+			resultado = stmt.executeUpdate(UPDATE);
+			stmt.close();
+			
+		}catch (SQLException s){
+			s.printStackTrace();
+		}
+		
+		return resultado;
+		
+	}
+	
+	
+	
+public int InsertarCategoriaPantalla1_1_2() {
+	
+		
+		int resultado = 0;
+		String UPDATE = "INSERT INTO  MIGUEL.PRODUCTO VALUES("+Pantalla1_1_2.Id+" , "+Pantalla1_1_2.Id_Categoria+" , '"+Pantalla1_1_2.NOMBRE+"',"+Pantalla1_1_2.Precio+")";
+		 
+		System.out.println(UPDATE);
+		try {
+			Statement stmt = conexion.createStatement();
+			resultado = stmt.executeUpdate(UPDATE);
+			stmt.close();
+			
+		}catch (SQLException s){
+			s.printStackTrace();
+		}
+		
+		return resultado;
+		
+	}
 	
 	
 

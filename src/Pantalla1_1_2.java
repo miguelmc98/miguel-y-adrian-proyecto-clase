@@ -21,6 +21,13 @@ public class Pantalla1_1_2 {
 	private JTable table;
 	private JTextField textField_1;
 	private JTextField textField_2;
+	private ConexionBBDD conexion;
+	static String Id;
+	 static String Id_Categoria;
+	static String NOMBRE;
+	static String Precio;
+	
+	
 
 	/**
 	 * Launch the application.
@@ -42,6 +49,7 @@ public class Pantalla1_1_2 {
 	 * Create the application.
 	 */
 	public Pantalla1_1_2() {
+		conexion = new ConexionBBDD();
 		initialize();
 	}
 
@@ -62,11 +70,18 @@ public class Pantalla1_1_2 {
 		lblAadirProducto.setFont(new Font("Lucida Bright", Font.ITALIC, 12));
 		lblAadirProducto.setBounds(58, 0, 107, 24);
 		frame.getContentPane().add(lblAadirProducto);
-		
+     
 		textField = new JTextField();
 		textField.setColumns(10);
 		textField.setBounds(105, 43, 86, 20);
 		frame.getContentPane().add(textField);
+		
+		
+		
+		
+		
+		
+		
 		
 		JLabel lblIdProducto = new JLabel("Id Producto:");
 		lblIdProducto.setHorizontalAlignment(SwingConstants.CENTER);
@@ -80,11 +95,16 @@ public class Pantalla1_1_2 {
 		frame.getContentPane().add(lblProducto);
 		
 		JButton button = new JButton("A\u00F1adir");
+		
+		
 		button.setForeground(Color.BLACK);
 		button.setFont(new Font("Lucida Bright", Font.ITALIC, 12));
 		button.setBackground(Color.GRAY);
 		button.setBounds(34, 202, 157, 38);
 		frame.getContentPane().add(button);
+		
+		
+        
 		
 		JButton button_1 = new JButton("Editar");
 		button_1.setForeground(Color.BLACK);
@@ -94,6 +114,16 @@ public class Pantalla1_1_2 {
 		frame.getContentPane().add(button_1);
 		
 		JButton button_2 = new JButton("Eliminar");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				textField.setText("");
+				textField_1.setText("");
+				textField_2.setText("");
+				
+				
+			}
+		});
 		button_2.setForeground(Color.BLACK);
 		button_2.setFont(new Font("Lucida Bright", Font.ITALIC, 12));
 		button_2.setBackground(Color.GRAY);
@@ -125,6 +155,9 @@ public class Pantalla1_1_2 {
 		table.setBounds(220, 29, 285, 226);
 		frame.getContentPane().add(table);
 		
+		ConexionBBDD Prueba1 = new ConexionBBDD();
+		table.setModel(Prueba1.ConsultaTablaProductos());
+		
 		JLabel label_3 = new JLabel("Id");
 		label_3.setHorizontalAlignment(SwingConstants.CENTER);
 		label_3.setFont(new Font("Lucida Bright", Font.ITALIC, 12));
@@ -137,11 +170,6 @@ public class Pantalla1_1_2 {
 		label_4.setBackground(Color.LIGHT_GRAY);
 		label_4.setBounds(371, 7, 60, 14);
 		frame.getContentPane().add(label_4);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Hamburguesas", "Pizzas", "Helados", "Bebidas", "Cervezas", "Copas", "Cafe"}));
-		comboBox.setBounds(105, 74, 105, 20);
-		frame.getContentPane().add(comboBox);
 		
 		JLabel lblIdCategoria = new JLabel("Id Categoria");
 		lblIdCategoria.setFont(new Font("Lucida Bright", Font.ITALIC, 12));
@@ -185,5 +213,29 @@ public class Pantalla1_1_2 {
 		btnAtras.setBackground(Color.GRAY);
 		btnAtras.setBounds(256, 308, 125, 29);
 		frame.getContentPane().add(btnAtras);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"1", "2"}));
+		comboBox.setBounds(115, 73, 76, 20);
+		frame.getContentPane().add(comboBox);
+		
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				Id=textField.getText();
+				
+				Id_Categoria= Integer.toString(comboBox.getSelectedIndex()+1);
+				NOMBRE=textField_1.getText();
+				Precio=textField_2.getText();
+				
+				DefaultTableModel data =(DefaultTableModel)table.getModel();
+				String [] fila = {Id,Id_Categoria,NOMBRE, Precio};
+				data.addRow(fila);
+				conexion.InsertarCategoriaPantalla1_1_2();
+				
+				
+			}
+				
+			});
 	}
 }
