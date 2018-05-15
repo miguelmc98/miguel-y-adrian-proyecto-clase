@@ -55,12 +55,12 @@ public class Pantalla2_1_1_1_1 {
 		frame.getContentPane().add(lblHamburguesas);
 		
 		JButton btnCarne = new JButton("");
-		btnCarne.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\3603b4_055b8a0a66694adba9f2247b9a5a4d3a_mv2.jpg"));
+		btnCarne.setIcon(new ImageIcon(Pantalla2_1_1_1_1.class.getResource("/img/hamburguesacarne.jpg")));
 		btnCarne.setBounds(36, 70, 265, 214);
 		frame.getContentPane().add(btnCarne);
 		
 		JButton btnPollo = new JButton("");
-		btnPollo.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\cadd20_f69727e71b14433a9719f86af48ad234.jpg"));
+		btnPollo.setIcon(new ImageIcon(Pantalla2_1_1_1_1.class.getResource("/img/hamburguesapollo.jpg")));
 		btnPollo.setBounds(369, 70, 237, 203);
 		frame.getContentPane().add(btnPollo);
 		

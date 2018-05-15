@@ -127,6 +127,49 @@ public int ModificarCategoria() {
 		return resultado;
 		
 	}
+
+public int BorrarCategoria() {
+	
+	
+	int resultado = 0;
+	String UPDATE = "DELETE FROM  MIGUEL.CATEGORIA WHERE  Id_Categoria="+Pantalla1_1_1.Id+" AND NOMBRE='"+Pantalla1_1_1.Nombre+"'";
+	 
+	System.out.println(UPDATE);
+	try {
+		Statement stmt = conexion.createStatement();
+		resultado = stmt.executeUpdate(UPDATE);
+		stmt.close();
+		
+	}catch (SQLException s){
+		s.printStackTrace();
+	}
+	
+	return resultado;
+	
+}
+
+
+public int BorrarProducto() {
+	
+	
+	int resultado = 0;
+	String UPDATE = "DELETE FROM  MIGUEL.PRODUCTO WHERE  Id_producto="+Pantalla1_1_2.Id+" and Id_Categoria="+Pantalla1_1_2.Id_Categoria+"  AND NOMBRE='"+Pantalla1_1_2.NOMBRE+"'  AND PRECIO="+Pantalla1_1_2.Precio+"";
+	 
+	System.out.println(UPDATE);
+	try {
+		Statement stmt = conexion.createStatement();
+		resultado = stmt.executeUpdate(UPDATE);
+		stmt.close();
+		
+	}catch (SQLException s){
+		s.printStackTrace();
+	}
+	
+	return resultado;
+	
+}
+
+
 	
 	
 	
@@ -149,6 +192,25 @@ public int InsertarCategoriaPantalla1_1_2() {
 		return resultado;
 		
 	}
+public int ModificarProducto() {
+	
+	
+	int resultado = 0;
+	String UPDATE = "UPDATE  MIGUEL.PRODUCTO SET   Id_producto="+Pantalla1_1_2.Id+" , Id_Categoria="+Pantalla1_1_2.Id_Categoria+"  , NOMBRE='"+Pantalla1_1_2.NOMBRE+"'  , PRECIO="+Pantalla1_1_2.Precio+" WHERE Id_producto="+Pantalla1_1_2.Id+"";
+	 
+	System.out.println(UPDATE);
+	try {
+		Statement stmt = conexion.createStatement();
+		resultado = stmt.executeUpdate(UPDATE);
+		stmt.close();
+		
+	}catch (SQLException s){
+		s.printStackTrace();
+	}
+	
+	return resultado;
+	
+}
 	
 	
 

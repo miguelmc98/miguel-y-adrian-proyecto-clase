@@ -52,12 +52,12 @@ public class Pantalla2_1_1_1_7 {
 		frame.getContentPane().add(lblCafes);
 		
 		JButton btnNewButton = new JButton("Cafe con leche");
-		btnNewButton.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\cafeleche.png"));
+		btnNewButton.setIcon(new ImageIcon(Pantalla2_1_1_1_7.class.getResource("/img/cafeleche.png")));
 		btnNewButton.setBounds(39, 56, 118, 119);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnCafeSinLeche = new JButton("Cafe solo");
-		btnCafeSinLeche.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\cagesolo.jpg"));
+		btnCafeSinLeche.setIcon(new ImageIcon(Pantalla2_1_1_1_7.class.getResource("/img/cagesolo.jpg")));
 		btnCafeSinLeche.setBounds(234, 56, 118, 119);
 		frame.getContentPane().add(btnCafeSinLeche);
 		

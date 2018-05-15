@@ -52,12 +52,12 @@ public class Pantalla2_1_1_1_5 {
 		frame.getContentPane().add(lblCarvezas);
 		
 		JButton btnConAlcohol = new JButton("Con alcohol");
-		btnConAlcohol.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\cerveza.jpg"));
+		btnConAlcohol.setIcon(new ImageIcon(Pantalla2_1_1_1_5.class.getResource("/img/cerveza.jpg")));
 		btnConAlcohol.setBounds(39, 84, 117, 91);
 		frame.getContentPane().add(btnConAlcohol);
 		
 		JButton btnSinAlcohol = new JButton("Sin alcohol");
-		btnSinAlcohol.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\cervezasin.jpg"));
+		btnSinAlcohol.setIcon(new ImageIcon(Pantalla2_1_1_1_5.class.getResource("/img/cervezasin.jpg")));
 		btnSinAlcohol.setBounds(247, 84, 117, 104);
 		frame.getContentPane().add(btnSinAlcohol);
 		

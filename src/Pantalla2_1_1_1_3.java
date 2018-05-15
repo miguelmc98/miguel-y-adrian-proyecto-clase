@@ -52,12 +52,12 @@ public class Pantalla2_1_1_1_3 {
 		frame.getContentPane().add(lblHelados);
 		
 		JButton btnChocolate = new JButton("Chocolate");
-		btnChocolate.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\chocolate.JPG"));
+		btnChocolate.setIcon(new ImageIcon(Pantalla2_1_1_1_3.class.getResource("/img/chocolate.JPG")));
 		btnChocolate.setBounds(36, 54, 120, 101);
 		frame.getContentPane().add(btnChocolate);
 		
 		JButton btnVainilla = new JButton("Vainilla");
-		btnVainilla.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\vainilla.jpg"));
+		btnVainilla.setIcon(new ImageIcon(Pantalla2_1_1_1_3.class.getResource("/img/vainilla.jpg")));
 		btnVainilla.setBounds(247, 62, 133, 93);
 		frame.getContentPane().add(btnVainilla);
 		

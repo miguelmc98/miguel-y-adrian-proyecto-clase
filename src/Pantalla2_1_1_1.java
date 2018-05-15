@@ -53,7 +53,7 @@ public class Pantalla2_1_1_1 {
 		JButton BotonBebida = new JButton("refrescos");
 		BotonBebida.setBackground(Color.BLACK);
 		BotonBebida.setForeground(Color.BLACK);
-		BotonBebida.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\drink_20623.png"));
+		BotonBebida.setIcon(new ImageIcon(Pantalla2_1_1_1.class.getResource("/img/babidas.png")));
 		BotonBebida.setBounds(47, 283, 161, 137);
 		frame.getContentPane().add(BotonBebida);
 		
@@ -71,7 +71,7 @@ public class Pantalla2_1_1_1 {
 		JButton BotonCafe = new JButton("cafes");
 		BotonCafe.setForeground(Color.BLACK);
 		BotonCafe.setBackground(Color.BLACK);
-		BotonCafe.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\coffee-bean-icon.png"));
+		BotonCafe.setIcon(new ImageIcon(Pantalla2_1_1_1.class.getResource("/img/cafee.png")));
 		BotonCafe.setBounds(991, 283, 161, 137);
 		frame.getContentPane().add(BotonCafe);
 		
@@ -91,7 +91,7 @@ public class Pantalla2_1_1_1 {
 		JButton BotonHamburguesa = new JButton("hamburguesa");
 		BotonHamburguesa.setBackground(Color.BLACK);
 		BotonHamburguesa.setForeground(Color.BLACK);
-		BotonHamburguesa.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\burger-icon.png"));
+		BotonHamburguesa.setIcon(new ImageIcon(Pantalla2_1_1_1.class.getResource("/img/burger-icon.png")));
 		BotonHamburguesa.setBounds(167, 72, 161, 137);
 		frame.getContentPane().add(BotonHamburguesa);
 		
@@ -111,7 +111,7 @@ public class Pantalla2_1_1_1 {
 		JButton BotonCervezas = new JButton("cerveza");
 		BotonCervezas.setForeground(Color.BLACK);
 		BotonCervezas.setBackground(Color.BLACK);
-		BotonCervezas.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\beer-icon.png"));
+		BotonCervezas.setIcon(new ImageIcon(Pantalla2_1_1_1.class.getResource("/img/cerveza.png")));
 		BotonCervezas.setBounds(368, 283, 161, 137);
 		frame.getContentPane().add(BotonCervezas);
 		
@@ -130,7 +130,7 @@ public class Pantalla2_1_1_1 {
 		JButton BotonCopas = new JButton("copas");
 		BotonCopas.setForeground(Color.BLACK);
 		BotonCopas.setBackground(Color.BLACK);
-		BotonCopas.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\drink-2-icon.png"));
+		BotonCopas.setIcon(new ImageIcon(Pantalla2_1_1_1.class.getResource("/img/copa (1).png")));
 		BotonCopas.setBounds(679, 283, 161, 137);
 		frame.getContentPane().add(BotonCopas);
 		
@@ -149,7 +149,7 @@ public class Pantalla2_1_1_1 {
 		JButton BotonPizza = new JButton("pizza");
 		BotonPizza.setBackground(Color.BLACK);
 		BotonPizza.setForeground(Color.BLACK);
-		BotonPizza.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\pizzaaaaaaaaaaa.png"));
+		BotonPizza.setIcon(new ImageIcon(Pantalla2_1_1_1.class.getResource("/img/pizzaaaaaaaaaaa.png")));
 		BotonPizza.setBounds(525, 72, 161, 137);
 		frame.getContentPane().add(BotonPizza);
 		
@@ -166,7 +166,7 @@ public class Pantalla2_1_1_1 {
 		JButton BotonPostres = new JButton("helados");
 		BotonPostres.setBackground(Color.BLACK);
 		BotonPostres.setForeground(Color.BLACK);
-		BotonPostres.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\icecream-2-icon.png"));
+		BotonPostres.setIcon(new ImageIcon(Pantalla2_1_1_1.class.getResource("/img/helados.png")));
 		BotonPostres.setBounds(897, 72, 161, 137);
 		frame.getContentPane().add(BotonPostres);
 		

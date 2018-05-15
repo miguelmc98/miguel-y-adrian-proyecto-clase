@@ -6,6 +6,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.JComboBox;
@@ -22,6 +23,7 @@ import java.awt.Point;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.ImageIcon;
 
 public class Pantalla1_1_1 {
 
@@ -72,7 +74,7 @@ public class Pantalla1_1_1 {
 		JLabel lblAadirCategoria = new JLabel("A\u00F1adir Categoria");
 		lblAadirCategoria.setFont(new Font("Lucida Bright", Font.ITALIC, 11));
 		lblAadirCategoria.setHorizontalAlignment(SwingConstants.CENTER);
-		lblAadirCategoria.setBounds(73, 4, 107, 24);
+		lblAadirCategoria.setBounds(73, 4, 133, 32);
 		frame.getContentPane().add(lblAadirCategoria);
 		
 		textField = new JTextField();
@@ -128,10 +130,23 @@ public class Pantalla1_1_1 {
 		JButton btnEliminar = new JButton("Eliminar");
 		btnEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				textField_1.setText("");
-				textField.setText("");
 				
+			
+				int filaelegida = table.getSelectedRow();
+				
+				if(filaelegida >=0) {
+					int fila;
+					fila=(Integer)table.getSelectedRow();
+					Object id=table.getValueAt(fila, 0);
+					((DefaultTableModel)table.getModel()).removeRow(fila);
+					DefaultTableModel data= new DefaultTableModel();
+					conexion.BorrarCategoria();
+					
+				}else {
+					JOptionPane.showMessageDialog(btnEliminar,"no esta seleccionada la fila");
+				}
 			}
+	
 		});
 		btnEliminar.setForeground(Color.BLACK);
 		btnEliminar.setBackground(new Color(128, 128, 128));
@@ -156,6 +171,7 @@ public class Pantalla1_1_1 {
 				Nombre = textField.getText();
 			 	Id = textField_1.getText();
 				 conexion.ModificarCategoria();
+					table.setModel(conexion.ConsultaTablaCategoria());
 			}
 		});
 		btnEditar.setForeground(Color.BLACK);
@@ -220,6 +236,11 @@ public class Pantalla1_1_1 {
 		});
 		btnListar.setBounds(249, 272, 89, 23);
 		frame.getContentPane().add(btnListar);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(Pantalla1_1_1.class.getResource("/img/escritorio.jpg")));
+		lblNewLabel.setBounds(0, 0, 560, 324);
+		frame.getContentPane().add(lblNewLabel);
 		
 		
 		}

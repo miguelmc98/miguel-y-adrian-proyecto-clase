@@ -2,6 +2,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
@@ -13,19 +15,23 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.ImageIcon;
 
 public class Pantalla1_1_2 {
 
 	static JFrame frame;
-	private JTextField textField;
+	private JTextField idproducto;
 	private JTable table;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField nombre;
+	private JTextField precio;
 	private ConexionBBDD conexion;
 	static String Id;
 	 static String Id_Categoria;
 	static String NOMBRE;
 	static String Precio;
+	private JTextField categoria;
 	
 	
 
@@ -71,10 +77,10 @@ public class Pantalla1_1_2 {
 		lblAadirProducto.setBounds(58, 0, 107, 24);
 		frame.getContentPane().add(lblAadirProducto);
      
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(105, 43, 86, 20);
-		frame.getContentPane().add(textField);
+		idproducto = new JTextField();
+		idproducto.setColumns(10);
+		idproducto.setBounds(105, 43, 86, 20);
+		frame.getContentPane().add(idproducto);
 		
 		
 		
@@ -107,6 +113,19 @@ public class Pantalla1_1_2 {
         
 		
 		JButton button_1 = new JButton("Editar");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				  Id=idproducto.getText();
+					Id_Categoria=categoria.getText();
+					NOMBRE=nombre.getText();
+					Precio=precio.getText();
+					 conexion.ModificarProducto();
+						table.setModel(conexion.ConsultaTablaProductos());
+				
+				
+			}
+		});
 		button_1.setForeground(Color.BLACK);
 		button_1.setFont(new Font("Lucida Bright", Font.ITALIC, 12));
 		button_1.setBackground(Color.GRAY);
@@ -117,12 +136,25 @@ public class Pantalla1_1_2 {
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				textField.setText("");
-				textField_1.setText("");
-				textField_2.setText("");
+
+				int filaelegida = table.getSelectedRow();
 				
-				
+				if(filaelegida >=0) {
+					int fila;
+					fila=(Integer)table.getSelectedRow();
+					Object id=table.getValueAt(fila, 0);
+					((DefaultTableModel)table.getModel()).removeRow(fila);
+					DefaultTableModel data= new DefaultTableModel();
+					conexion.BorrarProducto();
+					
+				}else {
+					JOptionPane.showMessageDialog(button_2,"no esta seleccionada la fila");
+				}
 			}
+				
+					
+				
+				
 		});
 		button_2.setForeground(Color.BLACK);
 		button_2.setFont(new Font("Lucida Bright", Font.ITALIC, 12));
@@ -131,6 +163,23 @@ public class Pantalla1_1_2 {
 		frame.getContentPane().add(button_2);
 		
 		table = new JTable();
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				
+				int seleccion =table.rowAtPoint(arg0.getPoint());
+				idproducto.setText((String)table.getValueAt(seleccion, 0));
+				categoria.setText((String)table.getValueAt(seleccion, 1));
+			nombre.setText((String)table.getValueAt(seleccion, 2));
+				precio.setText((String)table.getValueAt(seleccion, 3));
+				
+                  Id=idproducto.getText();
+				Id_Categoria=categoria.getText();
+				NOMBRE=nombre.getText();
+				Precio=precio.getText();
+			
+			}
+		});
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 				{null, null, null, null},
@@ -191,15 +240,15 @@ public class Pantalla1_1_2 {
 		lblPrecio_1.setBounds(22, 148, 46, 14);
 		frame.getContentPane().add(lblPrecio_1);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(105, 110, 86, 20);
-		frame.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
+		nombre = new JTextField();
+		nombre.setBounds(105, 110, 86, 20);
+		frame.getContentPane().add(nombre);
+		nombre.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(105, 145, 86, 20);
-		frame.getContentPane().add(textField_2);
-		textField_2.setColumns(10);
+		precio = new JTextField();
+		precio.setBounds(105, 145, 86, 20);
+		frame.getContentPane().add(precio);
+		precio.setColumns(10);
 		
 		JButton btnAtras = new JButton("ATRAS");
 		btnAtras.addActionListener(new ActionListener() {
@@ -214,19 +263,33 @@ public class Pantalla1_1_2 {
 		btnAtras.setBounds(256, 308, 125, 29);
 		frame.getContentPane().add(btnAtras);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"1", "2"}));
-		comboBox.setBounds(115, 73, 76, 20);
-		frame.getContentPane().add(comboBox);
+		JButton btnListar = new JButton("LISTAR");
+		btnListar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				table.setModel(conexion.ConsultaTablaProductos());
+			}
+		});
+		btnListar.setBounds(255, 266, 125, 31);
+		frame.getContentPane().add(btnListar);
+		
+		categoria = new JTextField();
+		categoria.setBounds(105, 74, 86, 20);
+		frame.getContentPane().add(categoria);
+		categoria.setColumns(10);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(Pantalla1_1_2.class.getResource("/img/escritorio.jpg")));
+		lblNewLabel.setBounds(0, 0, 515, 363);
+		frame.getContentPane().add(lblNewLabel);
 		
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				Id=textField.getText();
+				Id=idproducto.getText();
 				
-				Id_Categoria= Integer.toString(comboBox.getSelectedIndex()+1);
-				NOMBRE=textField_1.getText();
-				Precio=textField_2.getText();
+				Id_Categoria=categoria.getText();
+				NOMBRE=nombre.getText();
+				Precio=precio.getText();
 				
 				DefaultTableModel data =(DefaultTableModel)table.getModel();
 				String [] fila = {Id,Id_Categoria,NOMBRE, Precio};

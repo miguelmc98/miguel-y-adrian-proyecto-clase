@@ -52,12 +52,12 @@ public class Pantalla2_1_1_1_6 {
 		frame.getContentPane().add(lblCopas);
 		
 		JButton btnRon = new JButton("Ron barcelo");
-		btnRon.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\barcelo.jpg"));
+		btnRon.setIcon(new ImageIcon(Pantalla2_1_1_1_6.class.getResource("/img/barcelo.jpg")));
 		btnRon.setBounds(31, 60, 112, 129);
 		frame.getContentPane().add(btnRon);
 		
 		JButton btnBombay = new JButton("Bombay");
-		btnBombay.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\bombay.jpg"));
+		btnBombay.setIcon(new ImageIcon(Pantalla2_1_1_1_6.class.getResource("/img/bombay.jpg")));
 		btnBombay.setBounds(238, 60, 112, 121);
 		frame.getContentPane().add(btnBombay);
 		

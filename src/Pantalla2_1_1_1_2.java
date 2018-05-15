@@ -53,12 +53,12 @@ public class Pantalla2_1_1_1_2 {
 		frame.getContentPane().add(lblPizzas);
 		
 		JButton btnJamonYQueso = new JButton("Jamon y queso");
-		btnJamonYQueso.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\jamonyqueso.png"));
+		btnJamonYQueso.setIcon(new ImageIcon(Pantalla2_1_1_1_2.class.getResource("/img/jamonyqueso.png")));
 		btnJamonYQueso.setBounds(34, 74, 140, 110);
 		frame.getContentPane().add(btnJamonYQueso);
 		
 		JButton btnBarbacoa = new JButton("Barbacoa");
-		btnBarbacoa.setIcon(new ImageIcon("C:\\Users\\DAW1\\Desktop\\barbacoa.jpg"));
+		btnBarbacoa.setIcon(new ImageIcon(Pantalla2_1_1_1_2.class.getResource("/img/barbacoa.jpg")));
 		btnBarbacoa.setBounds(240, 74, 145, 110);
 		frame.getContentPane().add(btnBarbacoa);
 		
