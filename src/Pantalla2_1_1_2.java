@@ -12,7 +12,7 @@ import java.awt.Color;
 
 public class Pantalla2_1_1_2 {
 
-	private JFrame frame;
+	JFrame frame;
 	private JTable table;
 	private JTextField textField;
 	private JTextField textField_1;

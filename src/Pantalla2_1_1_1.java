@@ -20,18 +20,7 @@ public class Pantalla2_1_1_1 {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Pantalla2_1_1_1 window = new Pantalla2_1_1_1();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the application.
@@ -61,6 +50,7 @@ public class Pantalla2_1_1_1 {
 			public void actionPerformed(ActionEvent e) {
 				Pantalla2_1_1_1_4 refrescos  = new  Pantalla2_1_1_1_4();
 				refrescos.frame.setVisible(true);
+				Pantalla2_1_1_1.frame.setVisible(false);
 			
 			}
 			});
@@ -80,6 +70,8 @@ public class Pantalla2_1_1_1 {
 			public void actionPerformed(ActionEvent e) {
 				Pantalla2_1_1_1_7 coffe  = new  Pantalla2_1_1_1_7();
 				coffe.frame.setVisible(true);
+				Pantalla2_1_1_1.frame.setVisible(false);
+
 			
 			}
 			});
@@ -101,6 +93,8 @@ public class Pantalla2_1_1_1 {
 			public void actionPerformed(ActionEvent e) {
 				Pantalla2_1_1_1_1 hamburguesas = new  Pantalla2_1_1_1_1();
 				hamburguesas.frame.setVisible(true);
+				Pantalla2_1_1_1.frame.setVisible(false);
+
 			
 			}
 			});
@@ -120,6 +114,8 @@ public class Pantalla2_1_1_1 {
 			public void actionPerformed(ActionEvent e) {
 				Pantalla2_1_1_1_5 cervezas  = new  Pantalla2_1_1_1_5();
 			cervezas.frame.setVisible(true);
+			Pantalla2_1_1_1.frame.setVisible(false);
+
 			
 			}
 			});
@@ -139,6 +135,8 @@ public class Pantalla2_1_1_1 {
 			public void actionPerformed(ActionEvent e) {
 				Pantalla2_1_1_1_6 copas  = new  Pantalla2_1_1_1_6();
 				copas.frame.setVisible(true);
+				Pantalla2_1_1_1.frame.setVisible(false);
+
 			
 			}
 			});
@@ -158,6 +156,8 @@ public class Pantalla2_1_1_1 {
 			public void actionPerformed(ActionEvent e) {
 				Pantalla2_1_1_1_2 pizzas  = new  Pantalla2_1_1_1_2();
 			pizzas.frame.setVisible(true);
+			Pantalla2_1_1_1.frame.setVisible(false);
+
 			
 			}
 			});

@@ -7,26 +7,16 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 
 public class Pantalla2_1 {
 
-	JFrame frame;
+	static JFrame frame;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Pantalla2_1 window = new Pantalla2_1();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the application.
@@ -51,12 +41,22 @@ public class Pantalla2_1 {
 		public void actionPerformed(ActionEvent e) {
 			Pantalla2_1_1 numerodemesa  = new  Pantalla2_1_1();
 			numerodemesa.frame.setVisible(true);
+			Pantalla2_1.frame.setVisible(false);
+
 		
 		}
 		});
 	
 		
 		JButton btnAadirComandasA = new JButton("A\u00F1adir Comandas a un pedido existente");
+		btnAadirComandasA.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Pantalla2_1_1_2 comanda  = new  Pantalla2_1_1_2();
+				comanda.frame.setVisible(true);
+				Pantalla2_1.frame.setVisible(false);
+				
+			}
+		});
 		btnAadirComandasA.setBounds(72, 126, 237, 47);
 		frame.getContentPane().add(btnAadirComandasA);
 		
@@ -65,6 +65,10 @@ public class Pantalla2_1 {
 		lblBar.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBar.setBounds(155, 11, 59, 23);
 		frame.getContentPane().add(lblBar);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(Pantalla2_1.class.getResource("/img/escritorio.jpg")));
+		lblNewLabel.setBounds(0, 0, 391, 198);
+		frame.getContentPane().add(lblNewLabel);
 	}
-
 }

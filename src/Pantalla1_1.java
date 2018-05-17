@@ -17,18 +17,7 @@ public class Pantalla1_1 {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Pantalla1_1 window = new Pantalla1_1();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the application.
@@ -59,6 +48,8 @@ public class Pantalla1_1 {
 			public void actionPerformed(ActionEvent e) {
 				Pantalla1_1_2 añadirproducto  = new  Pantalla1_1_2();
 				añadirproducto.frame.setVisible(true);
+				Pantalla1_1.frame.setVisible(false);
+
 			
 			}
 		});
@@ -69,12 +60,9 @@ public class Pantalla1_1 {
 		btnNewButton_1.setFont(new Font("Lucida Bright", Font.ITALIC, 16));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btnNewButton_1.addActionListener(new ActionListener(){
-					public void actionPerformed(ActionEvent e) {
-						Pantalla1_1_1 añadircategoria  = new  Pantalla1_1_1();
-						añadircategoria.frame.setVisible(true);
-					}
-					});
+				Pantalla1_1_1 añadircategoria  = new  Pantalla1_1_1();
+				añadircategoria.frame.setVisible(true);
+				Pantalla1_1.frame.setVisible(false);
 			}
 		});
 		btnNewButton_1.setBounds(10, 65, 175, 91);

@@ -17,7 +17,7 @@ import java.awt.event.ActionEvent;
 
 public class Pantalla2_1_1 {
 
-	JFrame frame;
+	static JFrame frame;
 	private JTable table;
 
 	/**
@@ -79,6 +79,7 @@ public class Pantalla2_1_1 {
 				
 				Pantalla2_1_1_1 aceptar  = new  Pantalla2_1_1_1();
 				aceptar.frame.setVisible(true);
+				Pantalla2_1_1.frame.setVisible(false);
 				
 			}
 		});

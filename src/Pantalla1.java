@@ -11,7 +11,7 @@ import java.awt.Color;
 
 public class Pantalla1 {
 
-	JFrame frame;
+	static JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -61,6 +61,8 @@ public class Pantalla1 {
 				public void actionPerformed(ActionEvent e) {
 					Pantalla1_1 Administracion  = new  Pantalla1_1();
 					Administracion.frame.setVisible(true);
+					Pantalla1.frame.setVisible(false);
+
 				}
 				});
 		
@@ -74,6 +76,8 @@ public class Pantalla1 {
 		public void actionPerformed(ActionEvent e) {
 			Pantalla2_1 Administracion  = new  Pantalla2_1();
 			Administracion.frame.setVisible(true);
+			Pantalla1.frame.setVisible(false);
+
 		}
 		});
 	}}

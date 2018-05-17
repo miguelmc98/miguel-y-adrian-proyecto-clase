@@ -39,18 +39,7 @@ public class Pantalla1_1_1 {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Pantalla1_1_1 window = new Pantalla1_1_1();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the application.
@@ -72,7 +61,7 @@ public class Pantalla1_1_1 {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblAadirCategoria = new JLabel("A\u00F1adir Categoria");
-		lblAadirCategoria.setFont(new Font("Lucida Bright", Font.ITALIC, 11));
+		lblAadirCategoria.setFont(new Font("Lucida Bright", Font.ITALIC, 15));
 		lblAadirCategoria.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAadirCategoria.setBounds(73, 4, 133, 32);
 		frame.getContentPane().add(lblAadirCategoria);
